@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة الشركة</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <h2>الجداول</h2>
+        <nav>
+            <a href="#" data-table="departments" class="active">الأقسام</a>
+            <a href="#" data-table="employees">الموظفون</a>
+            <a href="#" data-table="warehouses">المستودعات</a>
+            <a href="#" data-table="suppliers">الموردون</a>
+            <a href="#" data-table="customers">العملاء</a>
+            <a href="#" data-table="categories">الفئات</a>
+            <a href="#" data-table="products">المنتجات</a>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <header>
+            <h1 id="pageTitle">إدارة الأقسام</h1>
+        </header>
+
+        <section class="controls">
+            <input type="text" id="searchInput" placeholder="ابحث...">
+            <button id="searchButton">بحث</button>
+            <button id="addButton">إضافة جديد</button>
+            <button id="manageColumnsButton">إدارة الأعمدة</button>
+            <button id="exportButton">تصدير إلى Excel/CSV</button>
+        </section>
+
+        <section class="data-view">
+            <div id="tableContainer"></div>
+            <div class="pagination-controls">
+                <button id="prevPage">السابق</button>
+                <span id="pageInfo">صفحة 1</span>
+                <button id="nextPage">التالي</button>
+            </div>
+        </section>
+        
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="modalTitle">إضافة بيانات</h2>
+                <form id="dataForm"></form>
+            </div>
+        </div>
+
+        <div id="columnsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" id="closeColumnsModal">&times;</span>
+                <h2>إدارة الأعمدة</h2>
+                <form id="columnsForm"></form>
+                <button id="saveColumnsButton" class="main-button">حفظ</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
